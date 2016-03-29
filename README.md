@@ -1,4 +1,4 @@
 # suse-challenge-1
 Suse Challenge One for Madrid
 
-#Explanation for Debug and how was solve the problem
+#Explanation for the problem (Debug and how it was solve)
