@@ -23,7 +23,7 @@ Vagrant.configure(2) do |config|
   #----------------------------------------------------------
   config.vm.provision "shell", inline: <<-SHELL
     sudo zypper update 
-    sudo zypper install git
+    sudo zypper -n install git
     git clone https://github.com/jvalderrama/suse-challenge-1.git
     cd suse-challenge-1
     sudo ./install/suse/install-docker
@@ -59,6 +59,9 @@ Vagrant.configure(2) do |config|
     #Start the build again wihout the error in the Dockerfile and name ""
     #--------------------------------------------------------------------
     docker build -f Dockerfile -t "" .
+
+    #List new build image create "" as name
+    docker images 
   
   SHELL
 end
