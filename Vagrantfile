@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
   #Install latest version of Docker once the VM is running up
   #----------------------------------------------------------
   config.vm.provision "shell", inline: <<-SHELL
-    sudo zypper update 
+    #sudo zypper -n update 
     sudo zypper -n install git
     git clone https://github.com/jvalderrama/suse-challenge-1.git
     cd suse-challenge-1
@@ -39,7 +39,7 @@ Vagrant.configure(2) do |config|
          MAINTAINER Jorge Valderrama <joedval@gmail.com>
          RUN touch /hello
          RUN boom
-    EOF
+EOF
    
     #Start the build. This produce the error:
     # /bin/sh: boom: not found

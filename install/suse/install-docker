@@ -6,6 +6,6 @@ cat /etc/os-release
 #Install docker on openSuse
 sudo zypper -n in docker
 sudo systemctl start docker
-sudo docker run hello-world
 sudo systemctl enable docker
 sudo /usr/sbin/usermod -a -G docker vagrant
+sudo docker run hello-world
