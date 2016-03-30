@@ -5,7 +5,7 @@
 # The command '/bin/sh -c boom' returned a non-zero code: 127
 # Error 
 #------------------------------------------------------------
-
+echo -e "Produce the error...\n\n" 
 docker build -f Dockerfile -t "" .
   
 #####################################################
@@ -14,13 +14,15 @@ docker build -f Dockerfile -t "" .
  
 #The error is due the command in the Docker file "RUN boom", so let's fix the error deleting this command from     #the Dockerfile
 #----------------------
-
-sed -i '$ d' Dockerfile
+echo -e "Fix the error...\n\n" 
+sudo sed -i '$ d' Dockerfile
 
 #Start the build again wihout the error in the Dockerfile and name ""
 #--------------------------------------------------------------------
+echo -e "Build the image with the name suggested...\n\n" 
 docker build -f Dockerfile -t "" .
 
 #List new build image create "" as name
----------------------------------------
+#---------------------------------------
+echo -e "Check the final image generated...\n\n" 
 docker images 
