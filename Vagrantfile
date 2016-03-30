@@ -40,28 +40,5 @@ Vagrant.configure(2) do |config|
          RUN touch /hello
          RUN boom
 EOF
-   
-    #Start the build. This produce the error:
-    # /bin/sh: boom: not found
-    # The command '/bin/sh -c boom' returned a non-zero code: 127
-    # Error 
-    #------------------------------------------------------------
-    docker build -f Dockerfile -t "" .
-  
-    #####################################################
-    ### You will end up with an image with "" as name ###
-    #####################################################
- 
-    #The error is due the command in the Docker file "RUN boom", so let's fix the error deleting this command from     #the Dockerfile
-    #----------------------
-    sed -i '$ d' Dockerfile
-
-    #Start the build again wihout the error in the Dockerfile and name ""
-    #--------------------------------------------------------------------
-    docker build -f Dockerfile -t "" .
-
-    #List new build image create "" as name
-    docker images 
-  
   SHELL
 end

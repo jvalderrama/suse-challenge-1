@@ -8,4 +8,3 @@ sudo zypper -n in docker
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo /usr/sbin/usermod -a -G docker vagrant
-sudo docker run hello-world
